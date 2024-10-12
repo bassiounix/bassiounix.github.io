@@ -5,7 +5,6 @@ import License from "../components/License.astro";
 import CommentWaline from "./CommentWaline.astro";
 import { DATE_FORMAT } from "../consts";
 import type { CardInfo } from "../types";
-import { t } from "i18next";
 const {
   title = "undefined",
   image,
@@ -58,7 +57,7 @@ const hasTags = tags && tags.length > 0;
                 {badge && <div class="badge badge-primary">{badge}</div>}
               </div>
               {time && (
-                <div class="badge  whitespace-nowrap">{`${time} ${t("label.readTime")}`}</div>
+                <div class="badge  whitespace-nowrap">{`${time} minutes`}</div>
               )}
             </div>
             <div class="flex items-center justify-between mt-2">
@@ -76,7 +75,7 @@ const hasTags = tags && tags.length > 0;
                   ))
                 ) : (
                   <div class="btn btn-xs btn-secondary btn-disabled rounded-full">
-                    {t("label.noCategory")}
+                    No categories assigned
                   </div>
                 )}
                 {hasTags ? (
@@ -92,12 +91,12 @@ const hasTags = tags && tags.length > 0;
                   ))
                 ) : (
                   <div class="btn btn-xs btn-secondary btn-disabled">
-                    {t("label.noTag")}
+                    No tags assigned
                   </div>
                 )}
               </div>
               {word && (
-                <div class="badge  whitespace-nowrap">{`${word} ${t("label.wordCount")}`}</div>
+                <div class="badge  whitespace-nowrap">{`${word} words`}</div>
               )}
             </div>
           </div>

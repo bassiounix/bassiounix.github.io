@@ -2,7 +2,6 @@
 import dayjs from "dayjs";
 import { Image } from "astro:assets";
 import type { EnvelopeInfo } from "../types";
-import { t } from "i18next";
 const {
   title,
   desc,
@@ -46,7 +45,7 @@ const target = "_self";
           </div>
           {
             time && (
-              <div class="badge  whitespace-nowrap">{`${time} ${t("label.readTime")}`}</div>
+              <div class="badge  whitespace-nowrap">{`${time} minutes`}</div>
             )
           }
         </div>
@@ -66,7 +65,7 @@ const target = "_self";
                 ))
               ) : (
                 <div class="btn btn-xs btn-secondary btn-disabled rounded-full">
-                  {t("label.noCategory")}
+                  No categories assigned
                 </div>
               )
             }
@@ -84,14 +83,14 @@ const target = "_self";
                 ))
               ) : (
                 <div class="btn btn-xs btn-secondary btn-disabled">
-                  {t("label.noTag")}
+                  No tags assigned
                 </div>
               )
             }
           </div>
           {
             word && (
-              <div class="badge whitespace-nowrap">{`${word} ${t("label.wordCount")}`}</div>
+              <div class="badge whitespace-nowrap">{`${word} words`}</div>
             )
           }
         </div>

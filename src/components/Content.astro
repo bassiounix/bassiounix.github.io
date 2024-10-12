@@ -49,7 +49,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
         if (headingId && headingText && headingLevel) {
           headingText = headingText.replace(/#/g, "");
           const level = headingLevel - 1;
-          levelCounters[level]++;
+          (levelCounters[level] as number)++;
           levelCounters.fill(0, level + 1);
           var numbering = levelCounters.slice(1, level + 1).join(".");
           if (numbering == "") numbering = "⚝";

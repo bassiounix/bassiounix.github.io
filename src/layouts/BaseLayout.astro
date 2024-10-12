@@ -9,14 +9,12 @@ import Content from "../components/Content.astro";
 import TagCard from "../components/TagCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import i18next, { changeLanguage } from "i18next";
 
-changeLanguage("en");
 const { title, image, includeSidebar = true } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={i18next.language} class="bg-base-300" data-theme="winter">
+<html lang="en" class="bg-base-300" data-theme="winter">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.9" />
@@ -76,7 +74,7 @@ const { title, image, includeSidebar = true } = Astro.props;
     let toolsBlocks = document.querySelectorAll(".highlight-tools");
 
     codeBlocks.forEach(function (codeBlock, index) {
-      let toolsBlock = toolsBlocks[index];
+      const toolsBlock = toolsBlocks[index] as Element;
 
       let container = document.createElement("div");
       container.className = "code-container";

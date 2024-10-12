@@ -1,4 +1,3 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
@@ -11,7 +10,6 @@ import rehypeKatex from "rehype-katex";
 import rehypeExternalLinks from "rehype-external-links";
 import playformCompress from "@playform/compress";
 
-import astroI18next from "astro-i18next";
 
 import swup, { Theme } from "@swup/astro";
 
@@ -51,7 +49,6 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     pagefind(),
-    astroI18next(),
     playformCompress(),
   ],
   markdown: {
