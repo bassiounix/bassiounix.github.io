@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Site title and description
-export const SITE_TAB = "Phoenix";
+export const SITE_TAB = "Phoenix Blog";
 export const SITE_TITLE = "Phoenix Blog";
 export const SITE_DESCRIPTION = "Phoenix tech blog";
 export const DATE_FORMAT = "ddd MMM DD YYYY";
@@ -10,7 +10,7 @@ export const DATE_FORMAT = "ddd MMM DD YYYY";
 // User profile information
 export const USER_NAME = "bassiounix";
 export const USER_SITE = "https://bassiounix.github.io"
-export const USER_AVATAR = "/profile.jpeg";
+export const USER_AVATAR = "/profile.png";
 
 // Server and transition settings
 export const SERVER_URL = "https://waline-tau-rosy.vercel.app/";
@@ -57,13 +57,6 @@ export const menuItems = [
     target: "_self",
   }, // Projects page
   {
-    id: "friend",
-    text: "Friend",
-    href: "/friend",
-    svg: "friend",
-    target: "_self",
-  }, // Friends page
-  {
     id: "contact",
     text: "Contact",
     href: "mailto:muhammad.m.bassiouni@gmail.com", // Contact email
@@ -74,24 +67,30 @@ export const menuItems = [
 
 // Social media and contact icons
 export const socialIcons = [
-  // {
-  //   href: "https://afdian.net/a/saroprock",
-  //   ariaLabel: "Support my work",
-  //   title: "Support my work",
-  //   svg: "support",
-  // },
+  {
+    href: "https://www.youtube.com/@bassiounix",
+    ariaLabel: "YouTube",
+    title: "YouTube",
+    svg: "youtube",
+  },
+  {
+    href: "https://www.linkedin.com/in/bassiounix",
+    ariaLabel: "LinkedIn",
+    title: "LinkedIn",
+    svg: "linkedin",
+  },
   {
     href: "https://github.com/bassiounix",
     ariaLabel: "Github",
     title: "Github",
     svg: "github",
   },
-  // {
-  //   href: "https://space.bilibili.com/438392347",
-  //   ariaLabel: "BiliBili",
-  //   title: "BiliBili",
-  //   svg: "bilibili",
-  // },
+  {
+    href: "https://twitter.com/bassiounix",
+    ariaLabel: "X",
+    title: "X",
+    svg: "x",
+  },
   {
     href: "/rss.xml",
     ariaLabel: "RSS Feed",
