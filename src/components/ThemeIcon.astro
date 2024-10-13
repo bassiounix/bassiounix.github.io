@@ -6,8 +6,8 @@
   class="flex justify-center card bg-base-100 btn btn-ghost w-auto h-10"
   id="themeToggle"
 >
-  <label for="themeToggle1" id="themeLabel1" class="hidden"
-    ><span class="sr-only">Theme Toggle</span>
+  <label for="themeToggle1" id="themeLabel1" class="hidden">
+    <span class="sr-only">Theme Toggle</span>
     <input type="checkbox" id="themeToggle1" />
     <svg
       class="swap-on fill-current w-10 h-10"
@@ -51,27 +51,31 @@
   ></button
 >
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const setTheme = (theme: string) => {
+  document.addEventListener("DOMContentLoaded", () => {    
+    function setTheme(theme: string) {
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
     };
+    
+    const themeToggleButton = document.getElementById("themeToggle");
+    const themeLabel1 = document.getElementById("themeLabel1") as HTMLLabelElement;
+    const themeToggle1 = document.getElementById("themeToggle1") as HTMLInputElement;
+    const themeLabel2 = document.getElementById("themeLabel2") as HTMLLabelElement;
+    const themeToggle2 = document.getElementById("themeToggle2") as HTMLInputElement;
+    
+    const deviceTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    const themeToggle = document.getElementById("themeToggle");
-    const themeLabel1 = document.getElementById(
-      "themeLabel1",
-    ) as HTMLLabelElement;
-    const themeToggle1 = document.getElementById(
-      "themeToggle1",
-    ) as HTMLInputElement;
-    const themeLabel2 = document.getElementById(
-      "themeLabel2",
-    ) as HTMLLabelElement;
-    const themeToggle2 = document.getElementById(
-      "themeToggle2",
-    ) as HTMLInputElement;
+    if (Object.is(localStorage.getItem('theme'), null)) {
+      setTheme(deviceTheme.matches ? 'dracula' : 'winter');
+      syncThemeToggle();
+    }
 
-    const syncThemeToggle = () => {
+    deviceTheme.addEventListener('change', (e) => {
+      setTheme(e.matches ? 'dracula' : 'winter');
+      syncThemeToggle();
+    });
+
+    function syncThemeToggle() {
       const currentTheme = localStorage.getItem("theme");
       if (themeLabel1 && themeLabel2 && themeToggle1 && themeToggle2) {
         const isDark = currentTheme === "dracula";
@@ -91,16 +95,16 @@
       }
     });
 
-    const handleToggleClick = () => {
+    function handleToggleClick() {
       const currentTheme = localStorage.getItem("theme");
       const newTheme = currentTheme === "winter" ? "dracula" : "winter";
       setTheme(newTheme);
       syncThemeToggle();
     };
 
-    if (themeToggle1 && themeToggle) {
+    if (themeToggle1 && themeToggleButton) {
       themeToggle1.disabled = true;
-      themeToggle.addEventListener("click", handleToggleClick);
+      themeToggleButton.addEventListener("click", handleToggleClick);
     }
 
     if (themeToggle2) {
