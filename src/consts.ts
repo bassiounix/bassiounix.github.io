@@ -50,9 +50,9 @@ export const menuItems = [
     ],
   }, // Blog page with sub-items
   {
-    id: "project",
-    text: "Project",
-    href: "/project",
+    id: "projects",
+    text: "Projects",
+    href: "/projects",
     svg: "project",
     target: "_self",
   }, // Projects page
