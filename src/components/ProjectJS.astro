@@ -1,50 +1,46 @@
----
-
----
+<project-js>
+  <slot />
+</project-js>
 
 <script>
-  function updateRepoInfo() {
-    function getRepoInfoFromUrl(repoUrl: string) {
-      const urlParts = repoUrl.split("/");
-      const owner = urlParts[urlParts.length - 2];
-      const repo = urlParts[urlParts.length - 1];
-      return { owner, repo };
-    }
+  class ProjectJS extends HTMLElement {
+    connectedCallback() {
+      console.log("from custom elemen");
+      this.querySelectorAll(".envelope-back").forEach((envelope) => {
+        const repoLinkElement = envelope.querySelector(".envelope-title");
 
-    const envelopes = document.querySelectorAll(".envelope-back");
+        if (repoLinkElement) {
+          const repoUrl = repoLinkElement.getAttribute("href");
 
-    envelopes.forEach((envelope) => {
-      const repoLinkElement = envelope.querySelector(".envelope-title");
-      if (repoLinkElement) {
-        const repoUrl = repoLinkElement.getAttribute("href");
-        if (repoUrl) {
-          const { owner, repo } = getRepoInfoFromUrl(repoUrl);
-          const apiUrl = `https://api.github.com/repos/${owner}/${repo}`;
+          if (repoUrl) {
+            const urlParts = repoUrl.split("/");
+            const owner = urlParts[urlParts.length - 2];
+            const repo = urlParts[urlParts.length - 1];
 
-          fetch(apiUrl)
-            .then((response) => response.json())
-            .then((data) => {
-              const repoUserSpan = envelope.querySelector(".repo-user span");
-              const repoForkSpan = envelope.querySelector(".repo-fork span");
-              const repoStarSpan = envelope.querySelector(".repo-star span");
-              const repoWatchSpan = envelope.querySelector(".repo-watch span");
+            fetch(`https://api.github.com/repos/${owner}/${repo}`)
+              .then((res) => res.json())
+              .then((data) => {
+                const repoUserSpan = envelope.querySelector(".repo-user span");
+                const repoForkSpan = envelope.querySelector(".repo-fork span");
+                const repoStarSpan = envelope.querySelector(".repo-star span");
+                const repoWatchSpan =
+                  envelope.querySelector(".repo-watch span");
 
-              if (repoUserSpan) repoUserSpan.textContent = data.owner.login;
-              if (repoForkSpan) repoForkSpan.textContent = data.forks_count;
-              if (repoStarSpan)
-                repoStarSpan.textContent = data.stargazers_count;
-              if (repoWatchSpan)
-                repoWatchSpan.textContent = data.subscribers_count;
-            })
-            .catch((error) => {
-              console.error("Error fetching repository data:", error);
-            });
+                if (repoUserSpan) repoUserSpan.textContent = data.owner.login;
+                if (repoForkSpan) repoForkSpan.textContent = data.forks_count;
+                if (repoStarSpan)
+                  repoStarSpan.textContent = data.stargazers_count;
+                if (repoWatchSpan)
+                  repoWatchSpan.textContent = data.subscribers_count;
+              })
+              .catch((error) => {
+                console.error("Error fetching repository data:", error);
+              });
+          }
         }
-      }
-    });
+      });
+    }
   }
 
-  document.addEventListener("DOMContentLoaded", updateRepoInfo);
-
-  document.addEventListener("swup:page:view", updateRepoInfo);
+  customElements.define("project-js", ProjectJS);
 </script>
