@@ -19,43 +19,40 @@ import ProjectJS from "../components/ProjectJS.astro";
 Some personal and group projects.
 
   </BaseCard>
-  <div class="mt-8 mb-8">
-    <ProjectJS>
-      <ProjectCard
-        title="Disworse"
-        desc="Discord Clone."
-        url="https://github.com/activecourses/disworse"
-        badge="TypeScript"
-        target="_self"
-      />
-      <ProjectCard
-        title="Interpreter"
-        desc="Built tree-walk interpreter for Lox programming language. Developed compiler frontend with custom tokenizer and parser to produce parse tree (Abstract Syntax Tree). Implemented parse tree code generation for statements and expressions using code generator and visitor pattern. Built interpreter backend with context-aware execution using parse tree interpretation with error reporting for compile-time and runtime errors."
-        url="https://github.com/bassiounix/Lox"
-        badge="Java"
-        target="_self"
-      />
-      <ProjectCard
-        title="Secure HTTP Client"
-        desc="Built end-to-end encrypted HTTP system using C++ and httplib. Utilized RC4 encryption algorithm over network connection and Elliptic-curve Diffie-Hellman key exchange handshake algorithm."
-        url="https://github.com/bassiounix/secure-http-communication"
-        badge="C++"
-        target="_self"
-      />
-      <ProjectCard
-        title="Zoi"
-        desc="Designed terminal-based tic-tac-toe game using Rust with smart opponent agent. Implemented game environment with board evaluation for winner and enabled agent to interact with environment. Developed smart movement playing and decision evaluation on board against player using Min-max algorithm on game tree."
-        url="https://github.com/bassiounix/zoi"
-        badge="Rust"
-        target="_self"
-      />
-      {/* <ProjectCard
-        title="Skin Cancer Classification App"
-        desc="Developed web app for skin cancer classification with CNN model using Python. Trained CNN model to classify skin cancer on normalized images from Kaggle using Keras, Tensorflow & T4 GPU. Integrated deep learning model with full-stack web application using Flask server. Deployed app on Colab notebook."
-        url="https://github.com/bassiounix/zoi"
-        badge="Rust"
-        target="_self"
-      /> */}
-    </ProjectJS>
-  </div>
+  <ProjectCard
+    title="Disworse"
+    desc="Discord Clone."
+    url="https://github.com/activecourses/disworse"
+    badge="TypeScript"
+    target="_self"
+  />
+  <ProjectCard
+    title="Interpreter"
+    desc="Built tree-walk interpreter for Lox programming language. Developed compiler frontend with custom tokenizer and parser to produce parse tree (Abstract Syntax Tree). Implemented parse tree code generation for statements and expressions using code generator and visitor pattern. Built interpreter backend with context-aware execution using parse tree interpretation with error reporting for compile-time and runtime errors."
+    url="https://github.com/bassiounix/Lox"
+    badge="Java"
+    target="_self"
+  />
+  <ProjectCard
+    title="Secure HTTP Client"
+    desc="Built end-to-end encrypted HTTP system using C++ and httplib. Utilized RC4 encryption algorithm over network connection and Elliptic-curve Diffie-Hellman key exchange handshake algorithm."
+    url="https://github.com/bassiounix/secure-http-communication"
+    badge="C++"
+    target="_self"
+  />
+  <ProjectCard
+    title="Zoi"
+    desc="Designed terminal-based tic-tac-toe game using Rust with smart opponent agent. Implemented game environment with board evaluation for winner and enabled agent to interact with environment. Developed smart movement playing and decision evaluation on board against player using Min-max algorithm on game tree."
+    url="https://github.com/bassiounix/zoi"
+    badge="Rust"
+    target="_self"
+  />
+  {/* <ProjectCard
+    title="Skin Cancer Classification App"
+    desc="Developed web app for skin cancer classification with CNN model using Python. Trained CNN model to classify skin cancer on normalized images from Kaggle using Keras, Tensorflow & T4 GPU. Integrated deep learning model with full-stack web application using Flask server. Deployed app on Colab notebook."
+    url="https://github.com/bassiounix/zoi"
+    badge="Rust"
+    target="_self"
+  /> */}
+  <ProjectJS />
 </BaseLayout>

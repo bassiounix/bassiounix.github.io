@@ -1,11 +1,9 @@
-<project-js>
-  <slot />
-</project-js>
+<project-js></project-js>
 
 <script>
   class ProjectJS extends HTMLElement {
     connectedCallback() {
-      this.querySelectorAll(".envelope-back").forEach((envelope) => {
+      document.querySelectorAll(".envelope-back").forEach((envelope) => {
         const repoLinkElement = envelope.querySelector(".envelope-title");
 
         if (repoLinkElement) {
