@@ -1,7 +1,7 @@
 # 网站的基本信息
 site:
-  tab: Phoenix Blog # 浏览器标签栏上显示的文本
-  title: 💠 Phoenix Blog # 网站的标题
+  tab: Fenix Blog # 浏览器标签栏上显示的文本
+  title: ❤️‍🔥 Fenix Blog # 网站的标题
   description: Personal tech blog # 网站的描述，用于SEO等
   language: en # 网站的语言，例如 "en" 是英文
   favicon: /favicon.ico # 网站的图标，用于浏览器标签栏和其他地方显示
@@ -23,38 +23,38 @@ site:
       href: /about
       svg: "material-symbols:info-outline-rounded"
       target: _self
-    # - id: blog
-    #   text: Blogs
-    #   href: /blog
-    #   svg: "material-symbols:book-2-outline-rounded"
-    #   target: _self
-    #   subItems:
-    #     - id: all
-    #       text: All blogs
-    #       href: /blog
-    #       svg: "material-symbols:ink-pen-outline-rounded"
-    #       target: _self
-    #     - id: documentation
-    #       text: Documentation
-    #       href: /blog/category/Documentation
-    #       svg: "material-symbols:unknown-document-outline-rounded"
-    #       target: _self
-    #     - id: examples
-    #       text: Examples
-    #       href: /blog/category/Examples
-    #       svg: "material-symbols:deployed-code-outline"
-    #       target: _self
-    #     # 子菜单项配置
-    #     - id: tech
-    #       text: Tech blogs
-    #       href: /blog/categories/tech
-    #       svg: "material-symbols:deployed-code-outline"
-    #       target: _self
-    #     - id: life
-    #       text: Life blogs
-    #       href: /blog/categories/life
-    #       svg: "material-symbols:nightlife"
-    #       target: _self
+    - id: blog
+      text: Blogs
+      href: /blog
+      svg: "material-symbols:book-2-outline-rounded"
+      target: _self
+      subItems:
+        - id: all
+          text: All blogs
+          href: /blog
+          svg: "material-symbols:ink-pen-outline-rounded"
+          target: _self
+        - id: documentation
+          text: Documentation
+          href: /blog/category/Documentation
+          svg: "material-symbols:unknown-document-outline-rounded"
+          target: _self
+        - id: examples
+          text: Examples
+          href: /blog/category/Examples
+          svg: "material-symbols:deployed-code-outline"
+          target: _self
+        # 子菜单项配置
+        - id: tech
+          text: Tech blogs
+          href: /blog/categories/tech
+          svg: "material-symbols:deployed-code-outline"
+          target: _self
+        - id: life
+          text: Life blogs
+          href: /blog/categories/life
+          svg: "material-symbols:nightlife"
+          target: _self
     - id: project
       text: Project
       href: /project

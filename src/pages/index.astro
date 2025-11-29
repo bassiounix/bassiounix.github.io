@@ -26,16 +26,16 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
           <p class="text-xl text-base-content/80 max-w-3xl mb-8">
             Writing about tech and stuff.
           </p>
-          <!-- <div class="flex flex-wrap gap-4 justify-center">
+          <div class="flex flex-wrap gap-4 justify-center">
             <a href="/blog" class="btn btn-primary gap-2 btn-shine-effect">
               <Icon name="lucide:book-open" class="w-5 h-5" />
               <span>Explore Blog</span>
             </a>
-            <a href="https://github.com/EveSunMaple/Frosti" target="_blank" class="btn btn-outline gap-2">
-              <Icon name="lucide:github" class="w-5 h-5" />
-              <span>Star on GitHub</span>
+            <a href="/about" class="btn btn-outline gap-2">
+              <Icon name="lucide:info" class="w-5 h-5" />
+              <span>About Me</span>
             </a>
-          </div> -->
+          </div>
         </div>
       </section>
 
@@ -99,7 +99,9 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
         </h2>
 
         <div class="card bg-base-200 p-6">
-          <h3 class="text-xl font-bold mb-4">Get started in three simple steps:</h3>
+          <h3 class="text-xl font-bold mb-4">
+            Get started in three simple steps:
+          </h3>
 
           <ol class="space-y-6 mb-6">
             <li class="relative flex flex-col gap-4 items-start">
@@ -112,8 +114,13 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
                 <h4 class="font-bold">Clone the repository</h4>
               </div>
               <div class="relative w-full">
-                <p class="text-base-content/70 mb-2">Use Git to clone the Frosti repository to your local machine:</p>
-                <Code code="git clone --depth 1 https://github.com/EveSunMaple/Frosti.git Frosti" lang="sh" />
+                <p class="text-base-content/70 mb-2">
+                  Use Git to clone the Frosti repository to your local machine:
+                </p>
+                <Code
+                  code="git clone --depth 1 https://github.com/EveSunMaple/Frosti.git Frosti"
+                  lang="sh"
+                />
               </div>
             </li>
 
@@ -127,7 +134,9 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
                 <h4 class="font-bold">Install dependencies</h4>
               </div>
               <div class="relative w-full">
-                <p class="text-base-content/70 mb-2">Navigate to the project directory and install dependencies:</p>
+                <p class="text-base-content/70 mb-2">
+                  Navigate to the project directory and install dependencies:
+                </p>
                 <Code code="cd Frosti && npm install" lang="sh" />
               </div>
             </li>
@@ -142,7 +151,9 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
                 <h4 class="font-bold">Start the development server</h4>
               </div>
               <div class="relative w-full">
-                <p class="text-base-content/70 mb-2">Launch the local development server to see your blog:</p>
+                <p class="text-base-content/70 mb-2">
+                  Launch the local development server to see your blog:
+                </p>
                 <Code code="npm run search:index && npm run dev" lang="sh" />
               </div>
             </li>
@@ -150,8 +161,9 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
 
           <div class="alert bg-primary/10 text-primary mb-0">
             <Icon name="lucide:lightbulb" class="w-6 h-6" />
-            <span
-              >Check out the <a href="/blog" class="underline">blog section</a> for detailed guides and documentation.</span
+            <span>
+              Check out the <a href="/blog" class="underline">blog section</a> for
+              detailed guides and documentation.</span
             >
           </div>
         </div>
