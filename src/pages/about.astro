@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import MainCard from "@/components/MainCard.astro";
 import GitHubStats from "@/components/mdx/GitHubStats.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About">
@@ -14,34 +14,20 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
   >
     <div class="space-y-10 mb-8">
       <!-- Profile Section -->
-      <section
-        class="flex flex-col md:flex-row gap-8 items-center md:items-start"
-      >
+      <section class="flex flex-col md:flex-row gap-8 items-center md:items-start">
         <div class="avatar">
           <div
             class="w-32 h-32 md:w-40 md:h-40 rounded-xl ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden"
           >
-            <img
-              src="https://github.com/bassiounix.png"
-              alt="SunMaple"
-              width="160"
-              height="160"
-              loading="eager"
-            />
+            <img src="https://github.com/bassiounix.png" alt="bassiounix" width="160" height="160" loading="eager" />
           </div>
         </div>
 
         <div class="flex-1 text-center md:text-left">
-          <h1 class="text-3xl md:text-4xl font-bold mb-2">
-            Muhammad Bassiouni
-          </h1>
-          <p class="text-xl text-base-content/80 mb-4">
-            Developer & Open-Source Enthusiast
-          </p>
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">Muhammad Bassiouni</h1>
+          <p class="text-xl text-base-content/80 mb-4">Developer & Open-Source Enthusiast</p>
 
-          <div
-            class="flex flex-wrap gap-3 justify-center md:justify-start mb-6"
-          >
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
             <a
               href="https://github.com/bassiounix"
               target="_blank"
@@ -173,7 +159,7 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
         <h2 class="text-3xl md:text-4xl font-bold mb-2">Open Source Projects</h2>
 
         <article class="space-y-4">
-          <div class="text-left font-semibold text-lg">Committer @ LLVM</div>
+          <div class="text-left font-semibold text-lg">Maintainer @ LLVM</div>
           <header class="grid grid-cols-2 gap-4">
             <div class="text-left text-lg">Jan 2025 – Present</div>
             <div class="text-right italic text-lg">
@@ -224,9 +210,7 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
           <span>Tech Stack</span>
         </h2>
 
-        <div
-          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
-        >
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {
             [
               {
@@ -313,9 +297,7 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
         </h2>
 
         <div class="bg-base-200 rounded-xl p-6 overflow-x-auto">
-          <div
-            class="flex flex-col md:flex-row gap-8 md:gap-4 md:overflow-x-auto md:pb-2"
-          >
+          <div class="flex flex-col md:flex-row gap-8 md:gap-4 md:overflow-x-auto md:pb-2">
             {
               [
                 {
@@ -362,9 +344,7 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
                     <div class="w-0.5 h-16 bg-base-300 mt-2 md:hidden" />
                   </div>
                   <div>
-                    <div class="text-sm text-base-content/60 mb-1">
-                      {item.date}
-                    </div>
+                    <div class="text-sm text-base-content/60 mb-1">{item.date}</div>
                     <h3 class="text-lg font-bold">{item.title}</h3>
                     <p class="text-base-content/80 mt-1">{item.desc}</p>
                   </div>

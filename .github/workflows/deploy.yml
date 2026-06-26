@@ -30,7 +30,16 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Astro typecheck
+        run: pnpm astro-check
+
+      - name: Biome check (lint + formatting) on src
+        run: pnpm biome:check
+
+      - name: Biome formatting check on src (no write)
+        run: pnpm biome:format -- ./src --write=false
 
       - name: Build Astro site
         run: pnpm build
